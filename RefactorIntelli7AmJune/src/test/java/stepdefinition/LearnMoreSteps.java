@@ -38,8 +38,12 @@ public class LearnMoreSteps {
     @Then("user compares the table value")
     public void userComparesTheTableValue() {
 
+
+
+        Assert.assertEquals("16.44%",context.pageObjectManager.getWikiPage().getShareHoldingHolderValue().get("Public"));
+
         Assert.assertEquals("Public",context.pageObjectManager.getWikiPage().getShareHolderValue().get(3));
-        Assert.assertEquals("16.44",context.pageObjectManager.getWikiPage().getShareHoldingValue().get(3));
+        Assert.assertEquals("16.44%",context.pageObjectManager.getWikiPage().getShareHoldingValue().get(3));
 
     }
 }
