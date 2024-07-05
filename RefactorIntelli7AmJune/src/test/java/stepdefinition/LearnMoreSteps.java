@@ -34,4 +34,12 @@ public class LearnMoreSteps {
         Assert.assertEquals("You Pressed Cancel", context.pageObjectManager.getLearnMoreAlertPage().getconfirmBoxUiText());
 
     }
+
+    @Then("user compares the table value")
+    public void userComparesTheTableValue() {
+
+        Assert.assertEquals("Public",context.pageObjectManager.getWikiPage().getShareHolderValue().get(3));
+        Assert.assertEquals("16.44",context.pageObjectManager.getWikiPage().getShareHoldingValue().get(3));
+
+    }
 }

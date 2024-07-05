@@ -20,10 +20,5 @@ public class WikiSteps {
         testContext.pageObjectManager.getWikiPage().getShareHoldingValue();
     }
 
-    @Then("user compares the table value")
-    public void userComparesTheTableValue() {
 
-        Assert.assertEquals("Public",testContext.pageObjectManager.getWikiPage().getShareHolderValue().get(3));
-        Assert.assertEquals("16.44",testContext.pageObjectManager.getWikiPage().getShareHoldingValue().get(3));
-    }
 }
