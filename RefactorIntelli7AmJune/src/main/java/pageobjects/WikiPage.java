@@ -31,7 +31,7 @@ public class WikiPage {
     public List<String> getShareHoldingValue(){
 
         int size=  driver.findElements(By.xpath("//table[@class='wikitable sortable jquery-tablesorter']/child::tbody/child::tr/child::td[2]")).size();
-        List<String> dropValues = new ArrayList<>();
+        List<String> dropValues = new ArrayList<String>();
         for(int i =0 ; i < size ; i++ ){
 
             dropValues.add( driver.findElements(By.xpath("//table[@class='wikitable sortable jquery-tablesorter']/child::tbody/child::tr/child::td[2]")).get(i).getText());
