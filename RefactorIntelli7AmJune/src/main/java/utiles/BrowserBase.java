@@ -15,25 +15,28 @@ public class BrowserBase {
 
     public WebDriver driver;
     public WebDriver getDriver() throws IOException {
-        File file =  new File("src/main/resources/configurations/frameworkconfi.properties");
-        FileInputStream fis = new FileInputStream(file);
-        Properties pro = new Properties();
-        pro.load(fis);
-        switch (pro.getProperty("browser").toLowerCase()){
-            case "edge":
-                driver = new EdgeDriver();
-                break;
-            case "chrome":
-                driver = new ChromeDriver();
-                break;
-            case "safari":
-                driver = new SafariDriver();
-                break;
-            default:
-                throw new InvalidArgumentException("enter valid browser");
-        }
 
-        driver.get(pro.getProperty("environment"));
+        if(driver == null) {
+            File file = new File("src/main/resources/configurations/frameworkconfi.properties");
+            FileInputStream fis = new FileInputStream(file);
+            Properties pro = new Properties();
+            pro.load(fis);
+            switch (pro.getProperty("browser").toLowerCase()) {
+                case "edge":
+                    driver = new EdgeDriver();
+                    break;
+                case "chrome":
+                    driver = new ChromeDriver();
+                    break;
+                case "safari":
+                    driver = new SafariDriver();
+                    break;
+                default:
+                    throw new InvalidArgumentException("enter valid browser");
+            }
+
+            driver.get(pro.getProperty("environment"));
+        }
 
         return driver;
     }

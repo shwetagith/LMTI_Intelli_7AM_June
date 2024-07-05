@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class WikiPage {
 
@@ -38,6 +40,31 @@ public class WikiPage {
         }
         System.out.println(dropValues);
         return dropValues;
+    }
+
+    public Map<String, String> getShareHoldingHolderValue(){
+
+        int size=  driver.findElements(By.xpath("//table[@class='wikitable sortable jquery-tablesorter']/child::tbody/child::tr/child::td[1]")).size();
+
+        Map<String, String> m = new HashMap<String,String>();
+
+        for(int i=0; i <size ; i++){
+
+           String shareHolderValue= driver.findElements(By.xpath("//table[@class='wikitable sortable jquery-tablesorter']/child::tbody/child::tr/child::td[1]")).get(i).getText();
+           String shareHoldingValue= driver.findElements(By.xpath("//table[@class='wikitable sortable jquery-tablesorter']/child::tbody/child::tr/child::td[2]")).get(i).getText();
+            m.put(shareHolderValue,shareHoldingValue);
+        }
+        System.out.println(m);
+
+        return m;
+    }
+
+    public void getColumn2Values(){
+
+     int size=   driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).size();
+       for (int i=2 ; i < size; i++){
+           driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).get(i).getText();
+       }
     }
 
 
