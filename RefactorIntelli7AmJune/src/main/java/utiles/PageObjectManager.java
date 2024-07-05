@@ -1,10 +1,7 @@
 package utiles;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.AmazonHomePage;
-import pageobjects.BabyWishListPage;
-import pageobjects.BabyWishlistBenefitsPage;
-import pageobjects.LearnMoreAlertPage;
+import pageobjects.*;
 
 public class PageObjectManager {
 
@@ -35,6 +32,11 @@ public class PageObjectManager {
     public LearnMoreAlertPage getLearnMoreAlertPage(){
         LearnMoreAlertPage alertPage = new LearnMoreAlertPage(driver);
         return alertPage;
+    }
+
+    public WikiPage getWikiPage(){
+        WikiPage wikiPage = new WikiPage(driver);
+        return wikiPage;
     }
 
 
