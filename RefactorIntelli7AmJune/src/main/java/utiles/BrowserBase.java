@@ -8,19 +8,30 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BrowserBase {
 
     public WebDriver driver;
-    public WebDriver getDriver() throws IOException {
+    public WebDriver getDriver() {
 
         if(driver == null) {
             File file = new File("src/main/resources/configurations/frameworkconfi.properties");
-            FileInputStream fis = new FileInputStream(file);
+            FileInputStream fis = null;
+            try {
+                fis = new FileInputStream(file);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
             Properties pro = new Properties();
-            pro.load(fis);
+            try {
+                pro.load(fis);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             switch (pro.getProperty("browser").toLowerCase()) {
                 case "edge":
                     driver = new EdgeDriver();
@@ -36,6 +47,8 @@ public class BrowserBase {
             }
 
             driver.get(pro.getProperty("environment"));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().window().maximize();
         }
 
         return driver;

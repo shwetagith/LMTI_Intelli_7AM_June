@@ -63,7 +63,11 @@ public class WikiPage {
 
      int size=   driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).size();
        for (int i=2 ; i < size; i++){
-           driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).get(i).getText();
+          String va= driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).get(i).getText();
+           if(va.equals("Switzerland")){
+               driver.findElements(By.xpath("//table[@class='infobox vcard']/descendant::tr/child::td")).get(i).click();
+                break;
+           }
        }
     }
 

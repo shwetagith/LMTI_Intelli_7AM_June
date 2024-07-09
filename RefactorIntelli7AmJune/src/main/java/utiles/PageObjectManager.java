@@ -39,6 +39,18 @@ public class PageObjectManager {
         return wikiPage;
     }
 
+    public LearnMoreExplicitWaitPage getExplictPage(){
+
+        LearnMoreExplicitWaitPage explicitWaitPage = new LearnMoreExplicitWaitPage(driver);
+        return explicitWaitPage;
+    }
+
+    public LearnMoreLoginPage getLearnMoreLoginPage(){
+
+        LearnMoreLoginPage loginPage= new LearnMoreLoginPage(driver);
+        return loginPage;
+    }
+
 
 
 
