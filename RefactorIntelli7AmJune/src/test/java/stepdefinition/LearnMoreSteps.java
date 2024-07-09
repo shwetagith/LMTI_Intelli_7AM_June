@@ -39,11 +39,34 @@ public class LearnMoreSteps {
     public void userComparesTheTableValue() {
 
 
-
         Assert.assertEquals("16.44%",context.pageObjectManager.getWikiPage().getShareHoldingHolderValue().get("Public"));
 
         Assert.assertEquals("Public",context.pageObjectManager.getWikiPage().getShareHolderValue().get(3));
         Assert.assertEquals("16.44%",context.pageObjectManager.getWikiPage().getShareHoldingValue().get(3));
 
+    }
+
+    @Given("user clicks on change to text button")
+    public void userClicksOnChangeToTextButton() {
+        context.pageObjectManager.getExplictPage().clickChangeTextButton();
+    }
+
+    @Then("user verify the text in UI")
+    public void userVerifyTheTextInUI() {
+        context.pageObjectManager.getExplictPage().getLearnMoreAspirantsText();
+    }
+
+    @Given("user enters the credi and navigate to homepage")
+    public void userEntersTheCrediAndNavigateToHomepage() {
+
+       context.pageObjectManager.getLearnMoreLoginPage().enterUserName().enterPassword().clickLogin();
+
+
+    }
+
+    @Then("verify the navigation")
+    public void verifyTheNavigation() {
+        Assert.assertEquals("Event Management",context.pageObjectManager.getLearnMoreLoginPage().switchToChildWindow());
+        context.pageObjectManager.getLearnMoreLoginPage().switchBackToParent();
     }
 }
