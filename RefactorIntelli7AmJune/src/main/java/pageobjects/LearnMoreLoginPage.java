@@ -38,7 +38,6 @@ public class LearnMoreLoginPage {
        Set<String> s =driver.getWindowHandles();
        Iterator<String > iterator = s.iterator();
         iterator.next();
-
        String childwind =  iterator.next();
 
         driver.switchTo().window(childwind);

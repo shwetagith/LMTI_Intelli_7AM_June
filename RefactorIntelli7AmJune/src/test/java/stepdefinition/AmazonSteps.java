@@ -35,6 +35,7 @@ public class AmazonSteps {
     public void userEntersTheProductName() {
 
         context.pageObjectManager.getAmazonHomePage().clickBabyWishList();
+        context.pageObjectManager.getAmazonSearchPage().getCellValue(6,2);
 
     }
 }
