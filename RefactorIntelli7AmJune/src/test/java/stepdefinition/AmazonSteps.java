@@ -33,8 +33,8 @@ public class AmazonSteps {
 
     @Given("user enters the product name")
     public void userEntersTheProductName() {
+    context.pageObjectManager.getAmazonHomePage().enterProduct("xyz",0,0);
 
-        context.pageObjectManager.getAmazonHomePage().clickBabyWishList();
 
     }
 }

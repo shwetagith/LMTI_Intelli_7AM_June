@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import utiles.ReadExcel;
 
 public class AmazonHomePage {
 
@@ -25,6 +26,10 @@ public class AmazonHomePage {
     public void enterProduct(String productName){
 
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys(productName);
+    }
+
+    public void enterProduct(String sheetName, int row , int colum){
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys(ReadExcel.readData(sheetName,row,colum));
     }
 
     public void searchIcon(){

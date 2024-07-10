@@ -51,6 +51,11 @@ public class PageObjectManager {
         return loginPage;
     }
 
+    public AmazonSearchPage getAmazonSearchPage(){
+        AmazonSearchPage searchPage = new AmazonSearchPage(driver);
+        return searchPage;
+    }
+
 
 
 

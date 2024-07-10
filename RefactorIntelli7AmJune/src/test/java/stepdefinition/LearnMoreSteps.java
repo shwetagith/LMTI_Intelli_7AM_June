@@ -66,6 +66,7 @@ public class LearnMoreSteps {
 
     @Then("verify the navigation")
     public void verifyTheNavigation() {
+
         Assert.assertEquals("Event Management",context.pageObjectManager.getLearnMoreLoginPage().switchToChildWindow());
         context.pageObjectManager.getLearnMoreLoginPage().switchBackToParent();
     }
