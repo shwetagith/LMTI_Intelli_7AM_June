@@ -6,7 +6,9 @@ Feature: Amazon Functionality Automation
     When user clicks on benefits
     Then user verify the Baby wishlist Benefits page
 
+    @amazon02
   Scenario: Filter by Memory Storage Capacity Validation
     Given user enters the product name
-    When user selects the memory capacity
+
+
 

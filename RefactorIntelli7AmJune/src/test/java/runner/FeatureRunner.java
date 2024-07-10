@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
         features = {"src/test/resources/featurefile"},
         glue = {"stepdefinition"},
-        tags = "@lmti03",
+        tags = "@amazon02",
         plugin = {"pretty"}
 )
 
