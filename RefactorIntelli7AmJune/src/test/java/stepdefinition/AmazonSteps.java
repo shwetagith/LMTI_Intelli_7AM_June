@@ -3,7 +3,10 @@ package stepdefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import utiles.TestContext;
+
+import java.io.IOException;
 
 public class AmazonSteps {
 
@@ -36,5 +39,11 @@ public class AmazonSteps {
     context.pageObjectManager.getAmazonHomePage().enterProduct("xyz",0,0);
 
 
+    }
+
+    @Then("verify the response code of forget your password link")
+    public void verifyTheResponseCodeOfForgetYourPasswordLink() throws IOException {
+
+        Assert.assertEquals(200,context.pageObjectManager.getSalesForceLoginPage().getResponseCode());
     }
 }
