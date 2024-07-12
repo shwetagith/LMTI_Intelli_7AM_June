@@ -2,6 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utiles.ReadExcel;
 
 public class AmazonSearchPage {
 
@@ -19,6 +20,7 @@ public class AmazonSearchPage {
     public void selectFromDropdownValue(String cityAbrevation){
 
         driver.findElement(By.xpath("//a[@value='"+cityAbrevation+"']")).click();
+
     }
 
     public void getCellValue(int rowIndex , int columnIndex){

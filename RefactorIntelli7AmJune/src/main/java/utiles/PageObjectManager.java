@@ -56,6 +56,11 @@ public class PageObjectManager {
         return searchPage;
     }
 
+    public SalesForcePage getSalesForceLoginPage(){
+        SalesForcePage s = new SalesForcePage(driver);
+        return s;
+    }
+
 
 
 
