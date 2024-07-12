@@ -42,8 +42,8 @@ public class AmazonHomePage {
         WebElement element = driver.findElement(By.id("nav-link-accountList"));
         Actions actions = new Actions(driver);
         actions.clickAndHold(element).build().perform();
-        // driver.findElement(By.linkText("Baby Wishlist")).click();
-        driver.findElement(By.partialLinkText("by Wishl")).click();
+         driver.findElement(By.linkText("Baby Wishlist")).click();
+       // driver.findElement(By.partialLinkText("by Wishl")).click();
 
     }
 
